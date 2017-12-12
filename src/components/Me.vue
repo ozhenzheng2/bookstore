@@ -9,7 +9,7 @@ export default {
   name: 'Me',
   data () {
     return {
-      msg: '我'
+      msg: '我',
     }
   }
 }

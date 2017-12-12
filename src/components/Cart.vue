@@ -9,7 +9,7 @@ export default {
   name: 'Cart',
   data () {
     return {
-      msg: '购物车'
+      msg: '购物车',
     }
   }
 }

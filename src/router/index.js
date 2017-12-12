@@ -14,22 +14,22 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
     },
     {
       path: '/Classify',
       name: 'classify',
-      component: Classify
+      component: Classify,
     },
     {
       path: '/Cart',
       name: 'cart',
-      component: Cart
+      component: Cart,
     },
     {
       path: '/Me',
       name: 'me',
-      component: Me
+      component: Me,
     },
   ]
 })

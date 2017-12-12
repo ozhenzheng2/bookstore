@@ -9,7 +9,7 @@ export default {
   name: 'Classify',
   data () {
     return {
-      msg: '分类'
+      msg: '分类',
     }
   }
 }
