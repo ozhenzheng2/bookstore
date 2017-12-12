@@ -1,6 +1,7 @@
 <template>
   <div class="me">
     <h1>{{msg}}</h1>
+    <div>个人中心页面</div>
   </div>
 </template>
 
