@@ -1,0 +1,154 @@
+@charset "utf-8";
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+  }
+  .me {
+    background-color: oldlace;
+    position: relative;
+  }
+  .mebg {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background: url(../assets/mebg.jpg) no-repeat;
+    background-position: 50% 30%;
+    background-size: cover;
+    .mask {
+      width: 100px;
+      height: 100px;
+      border: 1px solid peru;
+      border-radius: 50%;
+      position: absolute;
+      background: url(../assets/mebg.jpg) no-repeat center center;
+      background-size: cover;
+      top: 10%;
+      left: 50%;
+    }
+    .mename {
+      color: red;
+      text-align: center;
+      transform: translate(50px, 150px);
+      font-size: 30px;
+    }
+  }
+  .melist {
+    margin: 20px 0 40px 0;
+    list-style: none;
+    width: 100%;
+    height: auto;
+    li {
+      padding: 10px;
+      border: 1px solid #dddddd;
+      background-color: #ffffff;
+      position: relative;
+      font-size: 16px;
+      &:nth-child(3) {
+        margin: 20px 0 0 0;
+      }
+      &:nth-child(5) {
+        margin: 20px 0 0 0;
+      }
+      .meicon {
+        position: absolute;
+        top: 50%;
+        right: 1%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  .signout {
+    background-color: red;
+    padding: 10px 100px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    color: white;
+    &:hover {
+      background-color: #00ff00;
+    }
+  }
+  //地址样式
+  .meAddress{
+    
+    width: 100%;
+    height: calc(~"100% - 270px");
+    position: absolute;
+    top: 220px;
+    left: 100%;
+    font-size: 16px;
+    background-color: rgb(175, 238, 205);
+    text-align: center;  
+    transition: all 1.5s; 
+    h4{ 
+      height: 40px;
+      line-height: 40px;
+      background-color: mediumaquamarine;
+      color: white;
+    }
+    form{
+      background-color: rgb(175, 238, 205);
+      p{
+        text-align: center;
+        margin: 15px 0;
+      .meaddressbtn{
+        padding: 10px 100px;
+        border-radius:10px;
+        background-color: olivedrab; 
+        margin: 0 auto;
+      }
+       
+      }
+  
+    }
+  }
+  //个人信息样式
+  .mePerson{
+    background-color:yellowgreen;
+    text-align: center;
+    width: 100%;
+    height: calc(~"100% - 270px");
+    position: absolute;
+    top: 220px;
+    left: 100%;
+    transition: all 1.5s; 
+     h4{
+      height: 40px;
+      line-height: 40px;
+      background-color: mediumaquamarine;
+      color: white;
+    }
+    p{
+      margin: 20px 0;
+    }
+  }
+  // 订单样式
+  .meOder{
+    width: 100%;
+    height: calc(~"100% - 270px");
+    background-color: thistle;
+    text-align:center;
+    margin: 0 auto;
+    position: absolute;
+    top:220px;
+    left: 100%;
+    transition: all 1.5s; 
+    h4{ 
+      height: 40px;
+      line-height: 40px;
+      background-color: mediumaquamarine;
+      color: white;
+    }
+    form{
+      display: flex;
+      justify-content: space-between;
+      div{
+        padding: 5px 10px;
+        background-color: indianred;
+      }
+    }
+  }
