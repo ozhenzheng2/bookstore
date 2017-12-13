@@ -27,18 +27,18 @@ export default {
     }
   },
   methods: {
-    setBooklist() {
-      const selt = this;
-      axios.get('https://www.aulence.com/data/book-info.json').then(function (res) {
-        selt.booklist= res.data
-      }).catch(function (err) {
-        console.error('请求错误')
-      })
-    }
+    // setBooklist() {
+    //   const selt = this;
+    //   axios.get('https://www.aulence.com/data/book-info.json').then(function (res) {
+    //     selt.booklist= res.data
+    //   }).catch(function (err) {
+    //     console.error('请求错误')
+    //   })
+    // }
   },
-  created() {
-    this.setBooklist()
-  }
+  // created() {
+  //   this.setBooklist()
+  // }
 }
 </script>
 
