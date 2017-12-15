@@ -3,7 +3,7 @@
       <!-- 图片 -->
       <div class="mebg">
         <div class="mask"></div>
-        <p class="mename">fuck you！</p>
+        <p class="mename">{{userName}}</p>
       </div>
       <!-- 列表 -->
       <ul class="melist">
@@ -17,17 +17,16 @@
               <span class="meicon">></span>
         </li>
       </ul>
-      <button class="signout">退出登录</button>
+      <button class="signout" @click="tologin">退出登录</button>
 
-      <!-- =-============================================= -->
-      <transition name="slide-fade">
-            <!-- 个人 -->
+      <!-- =-==================<!-- 个人 =========================== -->
+      <transition name="slide-fade">           
             <div v-if="currentIndex === 0" class="mePerson">
               <div>
-                <i><</i>
+                <i @click="toperson"><</i>
                 <span>个人资料修改</span>
               </div>
-              <form action="">
+             
                 <p>
                   <span>昵称</span>
                   <input type="text">
@@ -55,26 +54,25 @@
                   <span>个人描述</span>
                   <textarea>请谈谈你对自己的认识</textarea>
                 </p>
-                <button class="mebtn">确认修改</button>
-              </form>
-              <div class="mePerson-mask" style="display:none">
+              <button class="mebtn" @click="PersonMask">确认修改</button>
+              
+              <div class="mePerson-mask" v-show="maskshow">
                   <div class="mask"></div>
                   <div class="mask-btn">
-                    <p>地址修改完成</p>
-                    <button>确定</button>
+                    <p>个人修改资料完成</p>
+                    <button @click="toperson">确定</button>
                   </div>
               </div>
             </div>
       </transition>
-      <!-- =-============================================= -->
-      <transition name="slide-fade">
-            <!-- 地址 -->
+      <!-- =-================== <!-- 地址 =========================== -->
+      <transition name="slide-fade"> 
           <div  v-if="currentIndex === 1" class="meAddress">
               <div style="text-align:center">
-                <i><</i>
+                <i @click="toperson"><</i>
                 <span>收货地址</span>
               </div>
-              <form action="">
+              
               <p>
                 <span>姓名</span>
                 <input type="text" placeholder="请填写你的真实名字 ">
@@ -114,43 +112,71 @@
                 
               </p>
            
-              <button class="mebtn">确认修改</button>
-            </form>
-            <div class="meAddress-mask" style="display:none">
-                <div class="mask"></div>
-                <div class="mask-btn">
-                  <p>个人资料修改完成</p>
-                  <button>确定</button>
-                </div>
-            </div>
-
+              <button class="mebtn" @click="AddressMask">确认修改</button>
+              
+              <div class="mePerson-mask" v-show="maskshowAddress">
+                  <div class="mask"></div>
+                  <div class="mask-btn">
+                    <p>地址资料完成</p>
+                    <button @click="toperson">确定</button>
+                  </div>
+              </div>
+          
           </div>
       </transition>
-      <!-- =-============================================= -->
-      <transition name="slide-fade">
-            <!-- 订单 -->
+      <!-- =-==================<!-- 登录注册模块 =========================== -->
+      <transition name="slide-fade">      
+        <div  v-show="loginShow" class="Login">
+          <div>
+            <ul>
+              <li :class="{loginColor:isshow}" @click="showLogPage">登录</li>
+              <li :class="{loginColor:!isshow}" @click="showRegPage">注册</li>
+            </ul>
+          </div>
+          <!-- 登录 -->
+          <div class="login-wrap" v-if="showLog">
+          
+            <p class="lo">
+              <span class="iconfont">&#xe621;</span>
+              <input type="text" placeholder="请输入11位手机号" v-model="loginname">
+            </p> 
+            <p v-show="numbertishi" class="red">请输入密码</p> 
+            <p class="lo">
+              <span class="iconfont">&#xe622;</span>
+              <input type="password" placeholder="请输入密码" v-model="loginnumber">
+            </p>        
+            <button @click="LoginBtn">登录</button>     
+          </div>
+          <!-- 注册 -->
+          <div class="register-wrap" v-else>
+            <!-- 手机验证 -->
+          
+            <p class="re">
+              <span class="iconfont">&#xe621;</span>
+              <input type="text" placeholder="请输入11位有效手机号" v-model="iphoneNumber">
+            </p>
+            <!-- 昵称 -->
             
+            <p class="re">
+              <span class="iconfont">&#xe64d;</span>
+              <input type="text" placeholder="请输入你的昵称(中文和英文)" v-model="usrName">
+            </p>
+            <!-- 密码 -->
+            
+            <p class="re">
+              <span class="iconfont">&#xe6b2;</span>
+              <input type="password" placeholder="请输入密码(6-12)位" v-model="usrPsd">
+            </p>
+            <!-- 请确认 -->
+            
+            <p class="re">
+              <span class="iconfont">&#xe623;</span>
+              <input type="password" placeholder="请确认你的密码" v-model="conusrPsd">
+            </p>
+            <button @click="RegBtn">注册</button>   
+          </div>
+        </div>
       </transition>
-      <div class="Login">
-        <div>
-          <ul>
-            <li :class="{loginColor:isshow}" @click="showLogPage">登录</li>
-            <li :class="{loginColor:!isshow}" @click="showRegPage">注册</li>
-          </ul>
-        </div>
-        <div class="login-wrap" v-if="showLog">           
-            <input type="text" placeholder="请输入用户名" >
-            <input type="password" placeholder="请输入密码">
-            <button>登录</button>     
-        </div>
-        <div class="register-wrap" v-else>
-            <input type="text" placeholder="请输入你的手机号" >
-            <input type="text" placeholder="请输入你的昵称" >
-            <input type="password" placeholder="请输入密码">
-            <input type="password" placeholder="请确认你的密码">
-            <button>注册</button>   
-        </div>
-      </div>
   </div>
 </template>
 
@@ -159,11 +185,31 @@ export default {
   name: "Me",
   data() {
     return {
+      // 状态值
+      maskshow:false,
+      maskshowAddress:false,
+      MaskData:'',
+      userName:'',
       showReg:false,
-      showLog:true,
-      
+      showLog:true,      
       isshow:true,
       currentIndex: NaN,
+      loginShow:false,
+
+      iphoneNumber:'',
+      usrName:'',
+      usrPsd:'',
+      conusrPsd:'',
+      RegData:[],
+      loginname:'',
+      loginnumber:'',
+      nametishi:false,
+      numbertishi:false,
+      showLonumber:false,
+      showLoName:false,
+     
+
+      // 数据
       meData: [
         { medata: "设置个人资料" },
         { medata: "收货地址管理" },
@@ -208,46 +254,216 @@ export default {
     };
   },
   methods: {
+    // 列表点击
     meShow: function(index) {
       this.$refs.list[index].children[1].style.transform = "rotate(90deg)";
       this.currentIndex = index;
     },
-     showRegPage() {
+    //修改按钮跳转回个人中心页面
+    PersonMask(){
+        this.maskshow = !this.maskshow;
+        
+    },
+    AddressMask(){
+        this.maskshowAddress = !this.maskshowAddress;
+        
+    },
+    //登录注册点击切换
+    showRegPage() {
             if(this.showReg){
                 return;
             }else{
                 this.showReg = true;
                 this.showLog = false;
-            }   
-        },
-        showLogPage() {  
+            }
+            this.isshow = !this.isshow;
+    },
+    showLogPage() {  
             if(this.showLog){
                 return;
             }else{
                 this.showLog = true;
                 this.showReg = false;
-            }   
+            }
+             this.isshow = !this.isshow;   
+    },
+    //返回个人中心
+    toperson(){
+            this.currentIndex = NaN;
         },
-  }
+    //退出按钮调转到登录注册页面
+    tologin(){
+            this.loginShow = !this.loginShow;
+            this.userName = '';
+            this.usrName  = '',
+            this.iphoneNumber = '',
+            this.usrPsd = '',
+            this.conusrPsd = '',
+            this.loginname = '',
+            this.loginnumber = ''
+    },
+    //注册按钮判断
+    RegBtn(){
+        
+        if(this.iphoneNumber === "" || this.usrName ==="" ||this.usrPsd === "" ||this.conusrPsd === ""  ){
+          alert('请输入密码和用户名');
+        }
+        //手机号验证
+        else{
+          
+                      
+          if(/^((1[3,5,8][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d{8}$/.test(this.iphoneNumber)){
+                if(/^[a-zA-Z\u4e00-\u9fa5]+$/.test(this.usrName)){
+                if(/^[a-zA-Z0-9]{6,12}$/.test(this.usrPsd)){
+                if(this.conusrPsd === this.usrPsd){
+                      var userData     = localStorage.getItem("userInfoList");  
+                      if(userData == null){
+                        alert("注册成功");
+                        this.loginShow = !this.loginShow;
+                        this.userName = "欢迎" + this.usrName;
+                      
+                        const usrData = { 
+                          number: this.iphoneNumber,
+                          name: this.usrName,
+                          Psd:this.usrPsd
+                        };
 
-};
+                      //
+                      var userInfoListDB = localStorage.getItem("userInfoList");
+                      // 如果该键名不存在
+                      if(!userInfoListDB) {
+                        // 创建用户数组
+                        var userArr = [];
+                      }
+                      // 如果键名已经存在
+                      else {
+                        // 取出该键
+                        var userArr = localStorage.getItem("userInfoList");
+                        // 解析JSON字符串成一个可操作的JS对象数组
+                        userArr = JSON.parse(userArr);
+                      }
+                      // 为用户数组新增当前用户的信息
+                      userArr.push(usrData);
+                      
+                      // 转换为JSON字符串
+                      userArr = JSON.stringify(userArr);
+                      
+                      // 创建本地存储的键值对
+                      localStorage.setItem("userInfoList", userArr);
+                      
+                      }else{
+                      
+
+                        var userDataReg  = JSON.parse(localStorage.getItem("userInfoList"));
+                        var userArr_leng = userDataReg.length;
+                        for(var i = 0; i < userArr_leng; i++) {
+                            if( this.iphoneNumber === userDataReg[i].number) {
+                                // 显示错误信息
+                            alert("对不起，该账号已经被注册过了");
+                            break;
+                            
+                          }else{
+                            alert("注册成功");
+                            this.loginShow = !this.loginShow;
+                            this.userName = "欢迎" + this.usrName;
+                          
+                            const usrData = { 
+                              number: this.iphoneNumber,
+                              name: this.usrName,
+                              Psd:this.usrPsd
+                            };
+    
+                          //
+                          var userInfoListDB = localStorage.getItem("userInfoList");
+                          // 如果该键名不存在
+                          if(!userInfoListDB) {
+                            // 创建用户数组
+                            var userArr = [];
+                          }
+                          // 如果键名已经存在
+                          else {
+                            // 取出该键
+                            var userArr = localStorage.getItem("userInfoList");
+                            // 解析JSON字符串成一个可操作的JS对象数组
+                            userArr = JSON.parse(userArr);
+                          }
+                          // 为用户数组新增当前用户的信息
+                          userArr.push(usrData);
+                          
+                          // 转换为JSON字符串
+                          userArr = JSON.stringify(userArr);
+                          
+                          // 创建本地存储的键值对
+                          localStorage.setItem("userInfoList", userArr);
+                          break;
+                      }
+                        
+                  }
+                        
+
+                      
+                        
+                    
+                      
+                  }
+                }
+                else{
+                  alert('和上一次输入的密码不匹配！');
+                }
+              }else{
+
+                alert('密码请输入6-12位字母数字混合密码！');
+              }
+            }else{
+                alert('昵称请输入中文或者英文！');
+            }
+                }
+          else{
+            alert('手机号请输入11位有效的手机号码！');
+          }
+        }
+       
+    },
+    //登录按钮判断
+    LoginBtn(){
+      //输入框数据为空
+      if(this.loginname == "" || this.loginnumber == ""){
+            alert('请输入手机号和密码');
+            return           
+      }
+      //用户名不存在 密码输入错误
+      
+      const listdata = JSON.parse(localStorage.getItem("userInfoList"));
+      console.log(listdata);
+      for(var i = 0; i < listdata.length; i++){
+        if(this.loginname !== listdata[i].number){
+                alert('该用户还没注册，请先注册！')
+                this.loginname = !this.loginname;
+                this.loginnumber = ! this.loginnumber;
+        }else{
+          if(this.loginnumber !== listdata[i].Psd){
+                alert('密码输入错误');
+          }else{
+                alert('登录成功！'); 
+                this.userName = listdata[i].name; 
+                this.loginShow = !this.loginShow;         
+          }
+        }
+
+      }
+
+      
+			
+
+    
+    }
+      
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang='less'>
   @import '../styles/me.less';
-
-
-.slide-fade-enter-active {
-  transition: all .3s ease;
-}
-.slide-fade-leave-active {
-  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-}
-.slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active for below version 2.1.8 */ {
-  transform: translateX(100%);
-  opacity: 0;
-}
 
 </style>

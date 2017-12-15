@@ -68,9 +68,6 @@
     border: none;
     outline: none;
     color: white;
-    &:hover {
-      background-color: #00ff00;
-    }
   }
 
   
@@ -103,7 +100,7 @@
       }
       
     }
-    form{
+    
         width: 100%;
         margin: 0 auto;
         text-align: center;
@@ -136,7 +133,7 @@
         outline: none;
   
       }
-    }
+    
     .mask{
       width: 100%;
       height: 100%;
@@ -181,6 +178,7 @@
     position: absolute;
     top: 220px;
     left: 0;
+    text-align: center;
     div{
       width: 100%;
       height: auto;
@@ -202,65 +200,65 @@
         
       }
     }
-    form{
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-      p{
+    p{
         border-bottom: 1px solid gray; 
         padding: 5px;
       }
-          button{
+    button{
             margin: 20px 0;
             padding: 10px 40px;
             background-color:  #00ff00;
             outline: none;
       
-          }
+      }
+      .mask{
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: 	#D3D3D3;
+        opacity: .6;
+        z-index: 100;
+        
+      }
+      .mask-btn{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background-color: white;
+        z-index: 200;
+        color: black;
+        width: 400px;
+        height: 200px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-around;
+        border-radius: 10px;
+        button{
+          padding: 10px 40px;
+          border-radius: 20px;
+          outline: none;
+        }      
     
-        }
-        .mask{
-          width: 100%;
-          height: 100%;
-          position: fixed;
-          top: 0;
-          left: 0;
-          background-color: 	#D3D3D3;
-          opacity: .6;
-          z-index: 100;
-          
-        }
-        .mask-btn{
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%,-50%);
-          background-color: white;
-          z-index: 200;
-          color: black;
-          width: 400px;
-          height: 200px;
-          text-align: center;
-          display: flex;
-          align-items: center;
-          flex-direction: column;
-          justify-content: space-around;
-          border-radius: 10px;
-          button{
-            padding: 10px 40px;
-            border-radius: 20px;
-            outline: none;
-          }
-          
-        }
-  
   }
+}
+       
+  
+  
 
 
 
   .Login{
     width: 100%;
     height: 600px;
+    position: absolute;
+    top: 220px;
+    left: 0;
+    background-color: #fff;
     div:nth-child(1){
      border-bottom: 1px solid red;
      margin-bottom: 20px;
@@ -273,66 +271,153 @@
             display: flex;
             justify-content: space-between;
             align-items: ceter;
-            margin: 20px auto;                                        
+            margin: 20px auto 0 auto;                                        
             li{
                 padding: 10px 40px;
                 
             }
+            .loginColor{
+              color: palegreen;
+              border-bottom: 5px solid #41b883;
+            }
         }
     }
-
     .login-wrap{
+        
        text-align:center;
+       .lo{
+         border-bottom: 1px solid gray;
        }
-    input{
-        display:block; 
-        width:250px; 
-        height:40px; 
-        line-height:40px; 
-        margin:0 auto; 
-        margin-bottom: 10px; 
-        outline:none;
-         border:1px solid #888;
+       .red{
+         color: red;
+       }
+       input{
+           display:inline-block; 
+           width:250px; 
+           height:40px; 
+           line-height:40px; 
+           margin:0 auto; 
+           margin-bottom: 10px; 
+           outline:none;
+           border:1px solid #888;
+           padding:10px; 
+           box-sizing:border-box;
+           border: none;
+        }
+             button{
+                 display:block; 
+                 width:250px; 
+                 height:40px; 
+                 line-height: 40px; 
+                 margin:0 auto; 
+                 border:none; 
+                 background-color:#41b883; 
+                 color:#fff; 
+                 font-size:16px; 
+                 margin-bottom:5px;
+                 margin-top: 10px;
+                 }
+             span{
+                 cursor:pointer;
+               }
+                 .loginColor{
+                     color:#41b883;
+                     border-bottom: 5px solid #41b883;
+                 }
+       }
+       .register-wrap{
+        text-align:center;
+        .Verify{
+          color: red;
+          margin: 10px 0;
+        }
+        .re{
+            border-bottom: 1px solid gray;
+        }
+        input{
+          display:inline-block; 
+          width:250px; 
+          height:40px; 
+          line-height:40px; 
+          margin:0 auto; 
+          margin-bottom: 10px; 
+          outline:none;
+          border:1px solid #888;
           padding:10px; 
-        box-sizing:border-box;
+          box-sizing:border-box;
+          border: none;
+        }
+        button{
+          display:block; 
+          width:250px; 
+          height:40px; 
+          line-height: 40px; 
+          margin:0 auto; 
+          border:none; 
+          background-color:#41b883; 
+          color:#fff; 
+          font-size:16px; 
+          margin-bottom:5px;
+          margin-top: 10px;
           }
-    p{
-        color:red;
-        }
-    button{
-        display:block; 
-        width:250px; 
-        height:40px; 
-        line-height: 40px; 
-        margin:0 auto; 
-        border:none; 
-        background-color:#41b883; 
-        color:#fff; 
-        font-size:16px; 
-        margin-bottom:5px;
-        }
-    span{
-        cursor:pointer;
-        }
-    span:hover{
-        color:#41b883;
-        }
-        .loginColor{
-            color:#41b883;
-            border-bottom: 5px solid indigo;
-        }
+       }
 }
 
 
-  
-  .slide-fade-enter-active {
-    transition: all .3s ease;
-  }
-  .slide-fade-leave-active {
-    transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  }
-  .slide-fade-enter, .slide-fade-leave-to
-  /* .slide-fade-leave-active for below version 2.1.8 */ {
-    transform: translateX(100%);
-    opacity: 0;
-  }
+ 
+
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active for below version 2.1.8 */ {
+  transform: translateX(100%);
+  opacity: 0;
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 378106 */
+  src: url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.eot');
+  src: url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.svg#iconfont') format('svg');
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 378106 */
+  src: url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.eot');
+  src: url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.svg#iconfont') format('svg');
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 378106 */
+  src: url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.eot');
+  src: url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.svg#iconfont') format('svg');
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 378106 */
+  src: url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.eot');
+  src: url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.svg#iconfont') format('svg');
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 378106 */
+  src: url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.eot');
+  src: url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family: 'iconfont';
+  color:gray;
+}
