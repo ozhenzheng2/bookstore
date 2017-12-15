@@ -34,7 +34,6 @@ export default {
   name: 'Classify',
   data () {
     return {
-        bookList: []
     }
   },
   methods:{
