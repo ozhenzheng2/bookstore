@@ -1,0 +1,380 @@
+@charset "utf-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.me {
+  background-color: oldlace;
+  position: relative;
+}
+.mebg {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: url(../assets/mebg.jpg) no-repeat;
+  background-position: 50% 30%;
+  background-size: cover;
+}
+.mebg .mask {
+  width: 100px;
+  height: 100px;
+  border: 1px solid peru;
+  border-radius: 50%;
+  position: absolute;
+  background: url(../assets/mebg.jpg) no-repeat center center;
+  background-size: cover;
+  top: 10%;
+  left: 50%;
+}
+.mebg .mename {
+  color: red;
+  text-align: center;
+  transform: translate(50px, 150px);
+  font-size: 30px;
+}
+.melist {
+  margin: 20px 0 40px 0;
+  list-style: none;
+  width: 100%;
+  height: auto;
+}
+.melist li {
+  padding: 10px;
+  border: 1px solid #dddddd;
+  background-color: #ffffff;
+  position: relative;
+  font-size: 16px;
+}
+.melist li:nth-child(3) {
+  margin: 20px 0 0 0;
+}
+.melist li:nth-child(5) {
+  margin: 20px 0 0 0;
+}
+.melist li .meicon {
+  position: absolute;
+  top: 50%;
+  right: 1%;
+  transform: translate(-50%, -50%);
+}
+.signout {
+  background-color: red;
+  padding: 10px 100px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: white;
+}
+.mePerson {
+  height: 500px;
+  background-color: tan;
+  position: absolute;
+  top: 220px;
+  left: 0;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.mePerson div {
+  width: 100%;
+  height: auto;
+  background-color: #000000;
+  color: white;
+  height: 50px;
+  line-height: 50px;
+}
+.mePerson div i {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 2%;
+}
+.mePerson div span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mePerson p {
+  border-bottom: 1px solid gray;
+  padding: 5px;
+}
+.mePerson p button {
+  display: inline-block;
+  padding: 5px 20px;
+  margin-right: 0px;
+}
+.mePerson p button:nth-child(1) {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.mePerson p button:nth-child(3) {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #00ff00;
+}
+.mePerson .mebtn {
+  margin: 20px 0;
+  padding: 10px 40px;
+  background-color: #00ff00;
+  outline: none;
+}
+.mePerson .mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #D3D3D3;
+  opacity: .6;
+  z-index: 100;
+}
+.mePerson .mask-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 200;
+  color: black;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+.mePerson .mask-btn button {
+  padding: 10px 40px;
+  border-radius: 20px;
+  outline: none;
+}
+.meAddress {
+  width: 100%;
+  height: 500px;
+  background-color: tan;
+  position: absolute;
+  top: 220px;
+  left: 0;
+  text-align: center;
+}
+.meAddress div {
+  width: 100%;
+  height: auto;
+  background-color: #000000;
+  color: white;
+  height: 50px;
+  line-height: 50px;
+}
+.meAddress div i {
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 2%;
+}
+.meAddress div span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.meAddress p {
+  border-bottom: 1px solid gray;
+  padding: 5px;
+}
+.meAddress button {
+  margin: 20px 0;
+  padding: 10px 40px;
+  background-color: #00ff00;
+  outline: none;
+}
+.meAddress .mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #D3D3D3;
+  opacity: .6;
+  z-index: 100;
+}
+.meAddress .mask-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 200;
+  color: black;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+}
+.meAddress .mask-btn button {
+  padding: 10px 40px;
+  border-radius: 20px;
+  outline: none;
+}
+.Login {
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: 220px;
+  left: 0;
+  background-color: #fff;
+}
+.Login div:nth-child(1) {
+  border-bottom: 1px solid red;
+  margin-bottom: 20px;
+}
+.Login div:nth-child(1) ul {
+  margin: 0;
+  padding: 0;
+  width: 250px;
+  height: auto;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: ceter;
+  margin: 20px auto 0 auto;
+}
+.Login div:nth-child(1) ul li {
+  padding: 10px 40px;
+}
+.Login div:nth-child(1) ul .loginColor {
+  color: palegreen;
+  border-bottom: 5px solid #41b883;
+}
+.Login .login-wrap {
+  text-align: center;
+}
+.Login .login-wrap .lo {
+  border-bottom: 1px solid gray;
+}
+.Login .login-wrap .red {
+  color: red;
+}
+.Login .login-wrap input {
+  display: inline-block;
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1px solid #888;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+}
+.Login .login-wrap button {
+  display: block;
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
+  border: none;
+  background-color: #41b883;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.Login .login-wrap span {
+  cursor: pointer;
+}
+.Login .login-wrap .loginColor {
+  color: #41b883;
+  border-bottom: 5px solid #41b883;
+}
+.Login .register-wrap {
+  text-align: center;
+}
+.Login .register-wrap .Verify {
+  color: red;
+  margin: 10px 0;
+}
+.Login .register-wrap .re {
+  border-bottom: 1px solid gray;
+}
+.Login .register-wrap input {
+  display: inline-block;
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1px solid #888;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+}
+.Login .register-wrap button {
+  display: block;
+  width: 250px;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 auto;
+  border: none;
+  background-color: #41b883;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+.slide-fade-enter-active {
+  transition: all .3s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateX(100%);
+  opacity: 0;
+}
+@font-face {
+  font-family: 'iconfont';
+  /* project id 378106 */
+  src: url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.eot');
+  src: url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.woff') format('woff'), url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.ttf') format('truetype'), url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.svg#iconfont') format('svg');
+}
+@font-face {
+  font-family: 'iconfont';
+  /* project id 378106 */
+  src: url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.eot');
+  src: url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.woff') format('woff'), url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.ttf') format('truetype'), url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.svg#iconfont') format('svg');
+}
+@font-face {
+  font-family: 'iconfont';
+  /* project id 378106 */
+  src: url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.eot');
+  src: url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.woff') format('woff'), url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.ttf') format('truetype'), url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.svg#iconfont') format('svg');
+}
+@font-face {
+  font-family: 'iconfont';
+  /* project id 378106 */
+  src: url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.eot');
+  src: url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.woff') format('woff'), url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.ttf') format('truetype'), url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.svg#iconfont') format('svg');
+}
+@font-face {
+  font-family: 'iconfont';
+  /* project id 378106 */
+  src: url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.eot');
+  src: url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.woff') format('woff'), url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.ttf') format('truetype'), url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.svg#iconfont') format('svg');
+}
+.iconfont {
+  font-family: 'iconfont';
+  color: gray;
+}

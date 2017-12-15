@@ -67,7 +67,7 @@
       </transition>
       <!-- =-================== <!-- 地址 =========================== -->
       <transition name="slide-fade"> 
-          <div  v-if="currentIndex === 1" class="meAddress">
+          <div  v-if="currentIndex  === 1" class="meAddress">
               <div style="text-align:center">
                 <i @click="toperson"><</i>
                 <span>收货地址</span>
@@ -125,7 +125,7 @@
           </div>
       </transition>
       <!-- =-==================<!-- 登录注册模块 =========================== -->
-      <transition name="slide-fade">      
+       
         <div  v-show="loginShow" class="Login">
           <div>
             <ul>
@@ -143,7 +143,7 @@
             <p v-show="numbertishi" class="red">请输入密码</p> 
             <p class="lo">
               <span class="iconfont">&#xe622;</span>
-              <input type="password" placeholder="请输入密码" v-model="loginnumber">
+              <input type="password" placeholder="请输入(6-12)密码" v-model="loginnumber">
             </p>        
             <button @click="LoginBtn">登录</button>     
           </div>
@@ -176,7 +176,7 @@
             <button @click="RegBtn">注册</button>   
           </div>
         </div>
-      </transition>
+     
   </div>
 </template>
 
@@ -430,26 +430,36 @@ export default {
       if(this.loginname == "" || this.loginnumber == ""){
             alert('请输入手机号和密码');
             return           
-      }
-      //用户名不存在 密码输入错误
-      
-      const listdata = JSON.parse(localStorage.getItem("userInfoList"));
-      console.log(listdata);
-      for(var i = 0; i < listdata.length; i++){
-        if(this.loginname !== listdata[i].number){
-                alert('该用户还没注册，请先注册！')
-                this.loginname = !this.loginname;
-                this.loginnumber = ! this.loginnumber;
-        }else{
-          if(this.loginnumber !== listdata[i].Psd){
-                alert('密码输入错误');
-          }else{
-                alert('登录成功！'); 
-                this.userName = listdata[i].name; 
-                this.loginShow = !this.loginShow;         
-          }
-        }
+      }else{
+            const LoginUerdata = localStorage.getItem("userInfoList");
+            if(!LoginUerdata){
+                  alert('请先注册');
+                  this.loginname = '';
+                  this.loginnumber = '';
+            }else{  
+              //用户名不存在 密码输入错误
+              const listdata = JSON.parse(localStorage.getItem("userInfoList"));
+              for(var i = 0; i < listdata.length; i++){
+                if(this.loginname !== listdata[i].number){
+                        alert('该用户还没注册，请先注册！')
+                        this.loginname = '';
+                        this.loginnumber = '';
+                }else{
+                  if(this.loginnumber !== listdata[i].Psd){
+                        alert('密码输入错误');
+                        this.loginname = '';
+                        this.loginnumber = '';
+                  }else{
+                        alert('登录成功！'); 
+                        this.userName = listdata[i].name; 
+                        this.loginShow = !this.loginShow;         
+                  }
+                }
+        
+              }
+              
 
+            }
       }
 
       
