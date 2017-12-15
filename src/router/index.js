@@ -5,8 +5,9 @@ import Home from '@/components/Home'
 import Classify from '@/components/Classify'
 import Cart from '@/components/Cart'
 import Me from '@/components/Me'
+import Cartpayment from '@/ChildrenComponents/Cartpayment'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
   mode:'history',
@@ -25,11 +26,17 @@ export default new Router({
       path: '/Cart',
       name: 'cart',
       component: Cart,
+
     },
     {
       path: '/Me',
       name: 'me',
       component: Me,
     },
+    {
+      path:'Cartpayment',
+      name: 'cartpayment',
+      component: Cartpayment
+    }
   ]
 })
