@@ -9,8 +9,8 @@
         <div class="swiper-pagination"></div>
 
         <!-- 如果需要导航按钮.. -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
+        <!--<div class="swiper-button-prev"></div>-->
+        <!--<div class="swiper-button-next"></div>-->
 
       </div>
       <div class="swiper-container2">
@@ -44,6 +44,7 @@
     </div>
 <!--蒙版-->
     <Homemark
+      v-if="markShows"
       :marklist="recoBook"
       :markindex="markIndex"
       :markisShow="markShows"
@@ -55,6 +56,7 @@
 <!--详情-->
     <transition name="slide-fade">
       <Homedetails
+        v-if="detshow"
         :detshow ='detshow'
         @detafalse = 'detafalse'
       />
@@ -290,23 +292,32 @@
       this.markIndex = idx;
       this.obj = obj
     },
+    // 关闭遮罩层
     close(){
       this.markShows = false;
     },
+    // 进入详情页
     detailisshow(){
       this.detshow = true
     },
+    // 关闭详情页，回到首页
     detafalse() {
       this.detshow = false;
       this.markShows = false;
     },
     isActive(isObj) {
       this.isActiveObj.push(isObj);
-    }
+    },
+    getcartObj(){
+
+//      var cartObj=[];
+//        localStorage.setItem(JSON.stringify(cartObj))
+    },
   },
     mounted() {
       this.swiper();
       this.swiper2()
+      this.getcartObj()
     }
 }
 </script>

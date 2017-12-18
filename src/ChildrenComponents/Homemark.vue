@@ -1,5 +1,5 @@
 <template>
-    <div class="homemark" v-if="markisShow">
+    <div class="homemark">
       <div class="mark" >
         <h3 @click="$emit('close')">x </h3>
         <div class="details">
@@ -21,7 +21,8 @@
           <span>3本</span>
         </div>
         <div class="cart">
-          <span v-for="(item,index) in list" :class="[idx == index ? 'active':'' ]" @click="isActive(index)">{{item}}</span>
+          <span @click="addCart">加入购物车</span>
+          <router-link :to="{name: 'cartpayment'}" tag="span"  class="active">立即购买</router-link>
         </div>
       </div>
     </div>
@@ -40,13 +41,18 @@
       }
     },
     methods:{
-        isActive(index){
-          this.idx = index;
-          if(index == 0){
+      addCart(){
             this.addcart = this.obj;
-            this.$emit('isActive',this.addcart)
-          }
-        }
+            this.$emit('isActive',this.addcart);
+            alert('成功加入购物车')
+        },
+      gitBookObj(){
+          var obj =JSON.stringify(this.$props.obj);
+          localStorage.setItem("bookObj",obj);
+      }
+    },
+    mounted(){
+      this.gitBookObj()
     }
   }
 
@@ -65,12 +71,14 @@
     font-size: 10px;
     .mark{
         width: 96%;
-        height: 83%;
+        height: 78%;
         background: #ffffff;
         margin: 0 auto;
         padding: 0;
         border: 1px solid #828282;
         box-sizing: border-box;
+        overflow-y: auto;
+        overflow-x: hidden;
       h3{
         border-bottom: 1px solid #c4c4c4;
         margin-top: 10px;

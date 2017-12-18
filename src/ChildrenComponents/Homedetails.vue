@@ -1,6 +1,5 @@
 <template>
-
-  <div id ="homedetails" v-if="detshow" class="{'trans':true}">
+  <div id ="homedetails"  class="{'trans':true}">
     <!--<transiton name="fade">-->
       <header>
           <span @click="$emit('detafalse')"><</span>
@@ -9,41 +8,38 @@
       <main>
         <div class="mainTop">
           <div class="details">
-            <img src="../../static/book-01.png" >
+            <img :src="bookObj.img" >
             <div class="authorBox">
-              <p><span>作者：</span><span>author</span></p>
-              <p><span>页数：</span><span>730</span></p>
-              <p><span>书号：</span><span>AFDAVGr</span> </p>
-              <p><span>出版日期:</span><span>2017.1.1</span> </p>
-              <p><span>售价:</span><span>￥99.50</span> </p>
+              <p><span>作者：</span><span>{{bookObj.author}}</span></p>
+              <p><span>页数：</span><span>{{bookObj.pages}}</span></p>
+              <p><span>书号：</span><span>{{bookObj.name}}</span> </p>
+              <p><span>出版日期:</span><span>{{bookObj.DateOfPublication}}</span> </p>
+              <p><span>售价:</span><span>￥{{bookObj.price}}</span> </p>
             </div>
           </div>
           <h4>JavaScript高级程序设计（第三版）</h4>
           <div class="cart">
-            <span v-for="(item,index) in list" :class="[idx == index ? 'active':'' ]" @click="isActive(index)">{{item}}</span>
+            <span @click="addCart">加入购物车</span>
+            <router-link :to="{name: 'cartpayment'}" tag="span"  class="active">立即购买</router-link>
           </div>
         </div>
         <div class="center"></div>
         <form>
           <fieldset class="bookcontent">
             <legend>内容概要</legend>
-            <p>《JavaScript高级程序设计(第3版)》是JavaScript超级畅销书的最新版。ECMAScript 5和HTML5在标准之争中双双胜出，使大量专有实现和客户端扩展正式进入规范，同时也为JavaScript增添了很多适应未来发展的新特性。
-              《JavaScript高级程序设计(第3版)》这一版除增加5章全新内容外，其他章节也有较大幅度的增补和修订，新内容篇幅约占三分之一。全书从JavaScript语言实现的各个组成部分——语言核心、DOM、BOM、事件模型讲起，深入浅出地探讨了面向对象深入浅出地探讨了面向对象</p>
+            <p>{{bookObj.describe}}</p>
           </fieldset>
           <fieldset class="bookcontent">
             <legend>内容概要</legend>
-            <p>《JavaScript高级程序设计(第3版)》是JavaScript超级畅销书的最新版。ECMAScript 5和HTML5在标准之争中双双胜出，使大量专有实现和客户端扩展正式进入规范，同时也为JavaScript增添了很多适应未来发展的新特性。
-              《JavaScript高级程序设计(第3版)》这一版除增加5章全新内容外，其他章节也有较大幅度的增补和修订，新内容篇幅约占三分之一。全书从JavaScript语言实现的各个组成部分——语言核心、DOM、BOM、事件模型讲起，深入浅出地探讨了面向对象深入浅出地探讨了面向对象</p>
+            <p>{{bookObj.describe}}</p>
           </fieldset>
           <fieldset class="bookcontent">
             <legend>内容概要</legend>
-            <p>《JavaScript高级程序设计(第3版)》是JavaScript超级畅销书的最新版。ECMAScript 5和HTML5在标准之争中双双胜出，使大量专有实现和客户端扩展正式进入规范，同时也为JavaScript增添了很多适应未来发展的新特性。
-              《JavaScript高级程序设计(第3版)》这一版除增加5章全新内容外，其他章节也有较大幅度的增补和修订，新内容篇幅约占三分之一。全书从JavaScript语言实现的各个组成部分——语言核心、DOM、BOM、事件模型讲起，深入浅出地探讨了面向对象深入浅出地探讨了面向对象</p>
+            <p>{{bookObj.describe}}</p>
           </fieldset>
           <fieldset class="bookcontent">
             <legend>内容概要</legend>
-            <p>《JavaScript高级程序设计(第3版)》是JavaScript超级畅销书的最新版。ECMAScript 5和HTML5在标准之争中双双胜出，使大量专有实现和客户端扩展正式进入规范，同时也为JavaScript增添了很多适应未来发展的新特性。
-              《JavaScript高级程序设计(第3版)》这一版除增加5章全新内容外，其他章节也有较大幅度的增补和修订，新内容篇幅约占三分之一。全书从JavaScript语言实现的各个组成部分——语言核心、DOM、BOM、事件模型讲起，深入浅出地探讨了面向对象深入浅出地探讨了面向对象</p>
+            <p>{{bookObj.describe}}</p>
           </fieldset>
         </form>
       </main>
@@ -59,16 +55,20 @@
     data () {
       return {
         list:['加入购物车','立即购买'],
-        idx: 1
+        idx: 1,
+        bookObj : {}
       }
     },
     methods:{
-      isActive(index) {
-        this.idx = index
+      addCart(){
+        alert('成功加入购物车')
       },
-      detafalse() {
-
+      getObj(){
+        this.bookObj = JSON.parse(localStorage.getItem('bookObj'));
       }
+    },
+    mounted(){
+      this.getObj()
     }
   }
 </script>
@@ -84,8 +84,6 @@
     background: #ffffff;
     z-index: 999;
     font-size: 10px;
-
-
     header{
       width: 100%;
       height:50px;
@@ -127,10 +125,23 @@
           .authorBox{
             width: calc(~"100% - 100px");
             p{
+              text-overflow:ellipsis;
+              height: 15px;
+              overflow: hidden;
+              white-space: nowrap;
+              text-align: left;
               & span:first-child{
                 display: inline-block;
                 width: 60px;
+                height: 15px;
                 margin-right: 30px;
+                span{
+                  height: 15px;
+                  display: inline-block;
+                  text-overflow:ellipsis;
+                  overflow: hidden;
+                  white-space: nowrap;
+                }
               }
             }
           }
@@ -163,7 +174,7 @@
         fieldset{
           padding: 10px 10px;
           width: 95%;
-          height: 130px;
+          height: 128px;
           border: 1px solid #252525;
           margin: 10px auto;
           overflow: hidden;
@@ -176,6 +187,7 @@
           p{
             font-size: 15px;
             color: #5e5e5e;
+            text-overflow:ellipsis;
           }
         }
       }

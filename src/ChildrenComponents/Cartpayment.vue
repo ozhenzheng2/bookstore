@@ -1,8 +1,11 @@
-
 <template>
-  <transition name="slide-right">
-          <div class="Box">
-                <div class="cartpayment">
+          <div class="Box" >
+                <div class="cartpayment" >
+                  <header>
+                    <router-link :to="{name: 'cart',params:{title:'购物车'}}" tag="span" class="return"> < </router-link>
+                    <!--<span class="return" @click="returnCart"><</span>-->
+                    <span>结算中心</span>
+                  </header>
                   <main>
                     <div>
                       <h3>商品信息确认</h3>
@@ -14,11 +17,11 @@
                         </p>
                         <p>
                           <span>运送费：</span>
-                          <span>￥128.60</span>
+                          <span>￥10.60</span>
                         </p>
                         <p>
                           <span class="h5">订单总计：</span>
-                          <span class="red">￥10</span>
+                          <span class="red">￥138.60</span>
                         </p>
                       </div>
                       <div class="bottom">
@@ -42,14 +45,14 @@
                           </p>
                         </div>
                         <div class="section">
-                          <p>
-                            <span>修改地址：</span>
+                          <p @click="receClick">
+                            <span>修改地址</span>
                             <span> > </span>
                           </p>
                         </div>
                         <div class="section">
-                          <p>
-                            <span>新增地址：</span>
+                          <p @click="receClick">
+                            <span>新增地址</span>
                             <span> > </span>
                           </p>
                         </div>
@@ -81,37 +84,53 @@
                     </div>
                   </main>
                 </div>
-                <header>
-                  <router-link :to="{name: 'cart',params:{title:'购物车'}}" tag="span" class="return"> < </router-link>
 
-                  <!--<span class="return" @click="returnCart"><</span>-->
-                  <span>结算中心</span>
-                </header>
+                <transition name="slide-fade">
+                <Received
+                      v-if="receShow"
+                      @returnPre = 'returnPre'
+                />
+            </transition>
           </div>
-  </transition>
 </template>
 
 <script>
-
+import Received from "./Received"
   export default {
     name: 'cartpayment',
+    components: {
+      Received
+    },
     props: [],
     data () {
       return {
-
-
+          receShow:false
       }
     },
     methods:{
-      returnCart() {
-
-      }
+      receClick() {
+        this.receShow=true
+      },
+      returnPre() {
+        this.receShow=false
+      },
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+  .slide-fade-enter-active {
+    transition: all .6s ease;
+    transform: translateX(0);
+  }
+  .slide-fade-leave-active {
+    transition: all .6s linear;
+  }
+  .slide-fade-enter, .slide-fade-leave-to {
+    transform: translateX(100%);
+  }
+
   .Box{
       transition: all 2s ease;
     header{
@@ -130,24 +149,6 @@
         top: 2px;
         left: 20px;
       }
-      .slide-right-enter-active {
-        transition: all 1s ease;
-        transform: translateX(0)
-      }
-
-      .slide-right-leave-active {
-        transition: all 1s ease;
-        transform: translateX(-100%)
-      }
-
-      .slide-right-enter {
-        transform: translateX(100%)
-      }
-
-      .slide-right-leave {
-        transform: translateX(0)
-      }
-
     }
   }
   .cartpayment{

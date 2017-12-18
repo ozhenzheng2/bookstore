@@ -21,6 +21,7 @@
                 <p>{{item.author}}</p>
                 <h6>￥{{item.price}}</h6>
               </div>
+              <!--数量加减-->
               <div class="add" v-show="editshow">
                 <span @click="reduce(index)">-</span>
                 <span>{{item.count}}</span>
@@ -32,9 +33,9 @@
         <div class="btn">
           <p>总价：{{prices}}</p>
           <!--<p>前往支付</p>-->
-
+          <transition name="slide-right">
             <router-link :to="{name: 'cartpayment',params:{title:'结算中心'}}" tag="p"  @click="cartshowclick" class="gopayment">前往支付</router-link>
-
+          </transition>
 
         </div>
       </div>
@@ -73,7 +74,7 @@ export default {
               "pages":730,
               "number":'B00CBBJS5Y',
               "DateOfPublication":'2012年3月1日',
-              "count": 0
+              "count": 1
             },
             {
               "img":"../../static/book-02.jpg",
@@ -84,7 +85,7 @@ export default {
               "pages":730,
               "number":'B00CBBJS5Y',
               "DateOfPublication":'2012年3月1日',
-              "count": 0
+              "count": 1
             },
             {
               "img":"../../static/book-03.jpg",
@@ -95,7 +96,7 @@ export default {
               "pages":730,
               "number":'B00CBBJS5Y',
               "DateOfPublication":'2012年3月1日',
-              "count": 0
+              "count": 1
             },
             {
               "img":"../../static/book-04.jpg",
@@ -106,11 +107,11 @@ export default {
               "pages":730,
               "number":'B00CBBJS5Y',
               "DateOfPublication":'2012年3月1日',
-              "count": 0
+              "count": 1
             }
       ],
       checkItem: [],
-      prices: 0,
+      prices: 39.6,
     }
   },
   computed: {
@@ -201,6 +202,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+  @import "../styles/cart.less";
   .slide-right-enter-active {
     transition: all 1s ease;
     transform: translateX(0)
@@ -212,136 +214,10 @@ export default {
   }
 
   .slide-right-enter {
-    transition: all 1s ease;
     transform: translateX(100%)
   }
 
   .slide-right-leave {
-    transition: all 1s ease;
     transform: translateX(0)
-  }
-
-  .none{
-    width: 100%;
-    height: 50px;
-    margin: 0 auto;
-    text-align: center;
-    h5{
-      color: #00ca00;
-    }
-  }
-  .CartBox{
-    width: 100%;
-    height: 100%;
-    transition: all 2s ease;
-  }
-  .cart{
-    padding: 0 10px;
-    font-size: 15px;
-    background: #efefef;
-    width: 100%;
-    height: 100%;
-    .gopayment{
-      transition: all .8s ease;
-    }
-    header{
-        width: 100%;
-        height: 40px;
-        line-height: 40px;
-        text-align: right;
-      color: #2875e1;
-      & span:last-child{
-        color: #ff4929;
-        margin-left: 20px;
-      }
-    }
-    .ulBox {
-      width: 100%;
-      list-style: none;
-      padding: 0;
-      ul{
-        padding: 0;
-        li {
-          display: inline-block;
-          height: 120px;
-          width: 100%;
-          padding: 10px;
-          margin: 0 0 2px 0;
-          text-align: center;
-          background: #ffffff;
-          display: flex;
-          position: relative;
-          img {
-            width: 26%;
-            height: 100px;
-            margin-right: 10px;
-          }
-          .idot{
-            margin-right: 10px;
-            display: flex;
-            .active{
-              background: #2875e1;
-              border: 0;
-            }
-            input{
-              display: inline-block;
-              border-style: none;
-              width: 15px;
-              height: 15px;
-              border: 1px solid #252525;
-              border-radius: 15px;
-              margin-top: 43px;
-            }
-          }
-          .right{
-            text-align: left;
-            h5 {
-              height: 20px;
-              line-height: 20px;
-              overflow: hidden;
-              color: #4c99ff;
-            }
-            h6 {
-              color: #ff7479;
-              font-size: 20px;
-            }
-          }
-          .add{
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            padding: 0;
-            span{
-              display: inline-block;
-              width: 20px;
-              height: 20px;
-              border: 1px solid #c0c0c0;
-              padding:0;
-              margin: 0;
-              line-height: 20px;
-            }
-          }
-        }
-
-      }
-    }
-    .btn{
-      width: 100%;
-      & p:first-child{
-        text-align: left;
-        color: #ff4f2f;
-        font-size: 25px;
-      }
-      & p:last-child{
-        width: 100%;
-        height: 30px;
-        background: #1da43e;
-        color: #ffffff;
-        border-style: none;
-        border-radius: 5px;
-        font-size: 20px;
-      }
-
-    }
   }
 </style>

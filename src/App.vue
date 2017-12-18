@@ -9,10 +9,10 @@
     </main>
     <footer class="footer">
       <ul>
-        <router-link :to="{name: 'home',params:{title:'掌上书店'}}" tag="li" exact>首页</router-link>
-        <router-link :to="{name: 'classify',params:{title:'分类'}}" tag="li" >分类</router-link>
-        <router-link :to="{name: 'cart',params:{title:'购物车'}}" tag="li">购物车</router-link>
-        <router-link :to="{name: 'me',params:{title:'我'}}" tag="li">我</router-link>
+        <router-link :to="{name: 'home',params:{title:'掌上书店'}}" tag="li" exact><p class="iconfont">&#xe605;</p><p>首页</p></router-link>
+        <router-link :to="{name: 'classify',params:{title:'分类'}}" tag="li" ><p class="iconfont">&#xe60e;</p><p>分类</p></router-link>
+        <router-link :to="{name: 'cart',params:{title:'购物车'}}" tag="li"><p class="iconfont">&#xe600;</p><p>购物车</p></router-link>
+        <router-link :to="{name: 'me',params:{title:'我'}}" tag="li"><p class="iconfont">&#xe611;</p><p>我</p></router-link>
       </ul>
     </footer>
   </div>

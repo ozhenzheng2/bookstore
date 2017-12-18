@@ -1,370 +1,415 @@
 @charset "utf-8";
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+.me {
+  background-color: oldlace;
+  position: relative;
+  @font-face {
+    font-family: 'iconfont';  /* project id 378106 */
+    src: url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.eot');
+    src: url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.woff') format('woff'),
+    url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.svg#iconfont') format('svg');
   }
-  .me {
-    background-color: oldlace;
-    position: relative;
+  @font-face {
+    font-family: 'iconfont';  /* project id 378106 */
+    src: url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.eot');
+    src: url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.woff') format('woff'),
+    url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.svg#iconfont') format('svg');
   }
-  .mebg {
-    position: relative;
-    width: 100%;
-    height: 200px;
-    background: url(../assets/mebg.jpg) no-repeat;
-    background-position: 50% 30%;
-    background-size: cover;
-    .mask {
-      width: 100px;
-      height: 100px;
-      border: 1px solid peru;
-      border-radius: 50%;
-      position: absolute;
-      background: url(../assets/mebg.jpg) no-repeat center center;
-      background-size: cover;
-      top: 10%;
-      left: 50%;
-    }
-    .mename {
-      color: red;
-      text-align: center;
-      transform: translate(50px, 150px);
-      font-size: 30px;
-    }
+  @font-face {
+    font-family: 'iconfont';  /* project id 378106 */
+    src: url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.eot');
+    src: url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.woff') format('woff'),
+    url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.svg#iconfont') format('svg');
   }
-  .melist {
-    margin: 20px 0 40px 0;
-    list-style: none;
-    width: 100%;
-    height: auto;
-    li {
-      padding: 10px;
-      border: 1px solid #dddddd;
-      background-color: #ffffff;
-      position: relative;
-      font-size: 16px;
-      &:nth-child(3) {
-        margin: 20px 0 0 0;
-      }
-      &:nth-child(5) {
-        margin: 20px 0 0 0;
-      }
-      .meicon {
-        position: absolute;
-        top: 50%;
-        right: 1%;
-        transform: translate(-50%, -50%);
-      }
-    }
+  @font-face {
+    font-family: 'iconfont';  /* project id 378106 */
+    src: url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.eot');
+    src: url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.woff') format('woff'),
+    url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.svg#iconfont') format('svg');
   }
-  .signout {
-    background-color: red;
-    padding: 10px 100px;
-    margin: 0 auto;
-    display: block;
-    border-radius: 10px;
-    border: none;
-    outline: none;
-    color: white;
+  @font-face {
+    font-family: 'iconfont';  /* project id 378106 */
+    src: url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.eot');
+    src: url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.woff') format('woff'),
+    url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.ttf') format('truetype'),
+    url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.svg#iconfont') format('svg');
   }
 
-  
-  .mePerson{
-    width: 100%;
-    height: 500px;
-    background-color: tan;
+  .iconfont{
+    font-family: 'iconfont';
+    color:gray;
+  }
+}
+.mebg {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: url(../assets/mebg.jpg) no-repeat;
+  background-position: 50% 30%;
+  background-size: cover;
+  .mask {
+    width: 100px;
+    height: 100px;
+    border: 1px solid peru;
+    border-radius: 50%;
     position: absolute;
-    top: 220px;
-    left: 0;
-    div{
-      width: 100%;
-      height: auto;
-      background-color: #000000;
-      color: white;
-      height: 50px;
-      line-height: 50px;
-      i{
-        color: white;
-        position: absolute;
-        top: 0;
-        left: 2%;
-      }
-      span{
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        
-      }
-      
+    background: url(../assets/mebg.jpg) no-repeat center center;
+    background-size: cover;
+    top: 10%;
+    left: 50%;
+  }
+  .mename {
+    color: red;
+    text-align: center;
+    transform: translate(50px, 150px);
+    font-size: 30px;
+  }
+}
+.melist {
+  margin: 20px 0 40px 0;
+  list-style: none;
+  width: 100%;
+  height: auto;
+  li {
+    padding: 10px;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    position: relative;
+    font-size: 16px;
+    &:nth-child(3) {
+      margin: 20px 0 0 0;
     }
-    
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        
-      p{
-        border-bottom: 1px solid gray; 
-        padding: 5px;
-      
-        button{
-
-          display: inline-block;
-          padding: 5px 20px;
-          margin-right: 0px;
-          
-        }
-        button:nth-child(1){
-          border-top-left-radius:20px; 
-          border-bottom-left-radius:20px;
-        }
-        button:nth-child(3){
-          border-top-right-radius:20px; 
-          border-bottom-right-radius:20px; 
-          background-color:  #00ff00;
-        }
-      }
-      .mebtn{
-        margin: 20px 0;
-        padding: 10px 40px;
-        background-color:  #00ff00;
-        outline: none;
-  
-      }
-    
-    .mask{
-      width: 100%;
-      height: 100%;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: 	#D3D3D3;
-      opacity: .6;
-      z-index: 100;
-      
+    &:nth-child(5) {
+      margin: 20px 0 0 0;
     }
-    .mask-btn{
+    .meicon {
       position: absolute;
       top: 50%;
-      left: 50%;
-      transform: translate(-50%,-50%);
-      background-color: white;
-      z-index: 200;
-      color: black;
-      width: 400px;
-      height: 200px;
-      text-align: center;
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      justify-content: space-around;
-      border-radius: 10px;
-      button{
-        padding: 10px 40px;
-        border-radius: 20px;
-        outline: none;
-      }
-      
+      right: 1%;
+      transform: translate(-50%, -50%);
     }
   }
+}
+.signout {
+  background-color: red;
+  padding: 10px 100px;
+  margin: 0 auto;
+  display: block;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  color: white;
+}
 
 
-  .meAddress{
+.mePerson{
+  width: 100%;
+  height: 500px;
+  background-color: tan;
+  position: absolute;
+  top: 220px;
+  left: 0;
+  div{
     width: 100%;
-    height: 500px;
-    background-color: tan;
-    position: absolute;
-    top: 220px;
-    left: 0;
-    text-align: center;
-    div{
-      width: 100%;
-      height: auto;
-      background-color: #000000;
+    height: auto;
+    background-color: #000000;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    i{
       color: white;
-      height: 50px;
-      line-height: 50px;
-      i{
-        color: white;
-        position: absolute;
-        top: 0;
-        left: 2%;
-      }
-      span{
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        
-      }
+      position: absolute;
+      top: 0;
+      left: 2%;
     }
-    p{
-        border-bottom: 1px solid gray; 
-        padding: 5px;
-      }
+    span{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+    }
+
+  }
+
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+
+  p{
+    border-bottom: 1px solid gray;
+    padding: 5px;
+
     button{
-            margin: 20px 0;
-            padding: 10px 40px;
-            background-color:  #00ff00;
-            outline: none;
-      
-      }
-      .mask{
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        top: 0;
-        left: 0;
-        background-color: 	#D3D3D3;
-        opacity: .6;
-        z-index: 100;
-        
-      }
-      .mask-btn{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        background-color: white;
-        z-index: 200;
-        color: black;
-        width: 400px;
-        height: 200px;
-        text-align: center;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        justify-content: space-around;
-        border-radius: 10px;
-        button{
-          padding: 10px 40px;
-          border-radius: 20px;
-          outline: none;
-        }      
-    
+
+      display: inline-block;
+      padding: 5px 20px;
+      margin-right: 0px;
+
+    }
+    button:nth-child(1){
+      border-top-left-radius:20px;
+      border-bottom-left-radius:20px;
+    }
+    button:nth-child(3){
+      border-top-right-radius:20px;
+      border-bottom-right-radius:20px;
+      background-color:  #00ff00;
+    }
+  }
+  .mebtn{
+    margin: 20px 0;
+    padding: 10px 40px;
+    background-color:  #00ff00;
+    outline: none;
+
+  }
+
+  .mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: 	#D3D3D3;
+    opacity: .6;
+    z-index: 100;
+
+  }
+  .mask-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 200;
+    color: black;
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 10px;
+    button{
+      padding: 10px 40px;
+      border-radius: 20px;
+      outline: none;
+    }
+
   }
 }
-       
-  
-  
 
 
-
-  .Login{
+.meAddress{
+  width: 100%;
+  height: 500px;
+  background-color: tan;
+  position: absolute;
+  top: 220px;
+  left: 0;
+  text-align: center;
+  div{
     width: 100%;
-    height: 600px;
-    position: absolute;
-    top: 220px;
-    left: 0;
-    background-color: #fff;
-    div:nth-child(1){
-     border-bottom: 1px solid red;
-     margin-bottom: 20px;
-        ul{
-            margin: 0;
-            padding: 0;
-            width: 250px;
-            height: auto;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: ceter;
-            margin: 20px auto 0 auto;                                        
-            li{
-                padding: 10px 40px;
-                
-            }
-            .loginColor{
-              color: palegreen;
-              border-bottom: 5px solid #41b883;
-            }
-        }
+    height: auto;
+    background-color: #000000;
+    color: white;
+    height: 50px;
+    line-height: 50px;
+    i{
+      color: white;
+      position: absolute;
+      top: 0;
+      left: 2%;
     }
-    .login-wrap{
-        
-       text-align:center;
-       .lo{
-         border-bottom: 1px solid gray;
-       }
-       .red{
-         color: red;
-       }
-       input{
-           display:inline-block; 
-           width:250px; 
-           height:40px; 
-           line-height:40px; 
-           margin:0 auto; 
-           margin-bottom: 10px; 
-           outline:none;
-           border:1px solid #888;
-           padding:10px; 
-           box-sizing:border-box;
-           border: none;
-        }
-             button{
-                 display:block; 
-                 width:250px; 
-                 height:40px; 
-                 line-height: 40px; 
-                 margin:0 auto; 
-                 border:none; 
-                 background-color:#41b883; 
-                 color:#fff; 
-                 font-size:16px; 
-                 margin-bottom:5px;
-                 margin-top: 10px;
-                 }
-             span{
-                 cursor:pointer;
-               }
-                 .loginColor{
-                     color:#41b883;
-                     border-bottom: 5px solid #41b883;
-                 }
-       }
-       .register-wrap{
-        text-align:center;
-        .Verify{
-          color: red;
-          margin: 10px 0;
-        }
-        .re{
-            border-bottom: 1px solid gray;
-        }
-        input{
-          display:inline-block; 
-          width:250px; 
-          height:40px; 
-          line-height:40px; 
-          margin:0 auto; 
-          margin-bottom: 10px; 
-          outline:none;
-          border:1px solid #888;
-          padding:10px; 
-          box-sizing:border-box;
-          border: none;
-        }
-        button{
-          display:block; 
-          width:250px; 
-          height:40px; 
-          line-height: 40px; 
-          margin:0 auto; 
-          border:none; 
-          background-color:#41b883; 
-          color:#fff; 
-          font-size:16px; 
-          margin-bottom:5px;
-          margin-top: 10px;
-          }
-       }
+    span{
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+
+    }
+  }
+  p{
+    border-bottom: 1px solid gray;
+    padding: 5px;
+  }
+  button{
+    margin: 20px 0;
+    padding: 10px 40px;
+    background-color:  #00ff00;
+    outline: none;
+
+  }
+  .mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: 	#D3D3D3;
+    opacity: .6;
+    z-index: 100;
+
+  }
+  .mask-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: white;
+    z-index: 200;
+    color: black;
+    width: 400px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 10px;
+    button{
+      padding: 10px 40px;
+      border-radius: 20px;
+      outline: none;
+    }
+
+  }
 }
 
 
- 
+
+
+
+
+.Login{
+  width: 100%;
+  height: 600px;
+  position: absolute;
+  top: 220px;
+  left: 0;
+  background-color: #fff;
+  div:nth-child(1){
+    border-bottom: 1px solid red;
+    margin-bottom: 20px;
+    ul{
+      margin: 0;
+      padding: 0;
+      width: 250px;
+      height: auto;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: ceter;
+      margin: 20px auto 0 auto;
+      li{
+        padding: 10px 40px;
+
+      }
+      .loginColor{
+        color: palegreen;
+        border-bottom: 5px solid #41b883;
+      }
+    }
+  }
+  .login-wrap{
+
+    text-align:center;
+    .lo{
+      border-bottom: 1px solid gray;
+    }
+    .red{
+      color: red;
+    }
+    input{
+      display:inline-block;
+      width:250px;
+      height:40px;
+      line-height:40px;
+      margin:0 auto;
+      margin-bottom: 10px;
+      outline:none;
+      border:1px solid #888;
+      padding:10px;
+      box-sizing:border-box;
+      border: none;
+    }
+    button{
+      display:block;
+      width:250px;
+      height:40px;
+      line-height: 40px;
+      margin:0 auto;
+      border:none;
+      background-color:#41b883;
+      color:#fff;
+      font-size:16px;
+      margin-bottom:5px;
+      margin-top: 10px;
+    }
+    span{
+      cursor:pointer;
+    }
+    .loginColor{
+      color:#41b883;
+      border-bottom: 5px solid #41b883;
+    }
+  }
+  .register-wrap{
+    text-align:center;
+    .Verify{
+      color: red;
+      margin: 10px 0;
+    }
+    .re{
+      border-bottom: 1px solid gray;
+    }
+    input{
+      display:inline-block;
+      width:250px;
+      height:40px;
+      line-height:40px;
+      margin:0 auto;
+      margin-bottom: 10px;
+      outline:none;
+      border:1px solid #888;
+      padding:10px;
+      box-sizing:border-box;
+      border: none;
+    }
+    button{
+      display:block;
+      width:250px;
+      height:40px;
+      line-height: 40px;
+      margin:0 auto;
+      border:none;
+      background-color:#41b883;
+      color:#fff;
+      font-size:16px;
+      margin-bottom:5px;
+      margin-top: 10px;
+    }
+  }
+}
+
+
+
 
 .slide-fade-enter-active {
   transition: all .3s ease;
@@ -373,51 +418,7 @@
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active for below version 2.1.8 */ {
+  /* .slide-fade-leave-active for below version 2.1.8 */ {
   transform: translateX(100%);
   opacity: 0;
-}
-@font-face {
-  font-family: 'iconfont';  /* project id 378106 */
-  src: url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.eot');
-  src: url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_378106_bhvu6c4nk9qc9pb9.svg#iconfont') format('svg');
-}
-@font-face {
-  font-family: 'iconfont';  /* project id 378106 */
-  src: url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.eot');
-  src: url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_378106_qjh5yvy2yb2lc8fr.svg#iconfont') format('svg');
-}
-@font-face {
-  font-family: 'iconfont';  /* project id 378106 */
-  src: url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.eot');
-  src: url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_378106_oslrl7p0bb7qfr.svg#iconfont') format('svg');
-}
-@font-face {
-  font-family: 'iconfont';  /* project id 378106 */
-  src: url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.eot');
-  src: url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_378106_teqfk3qtio4j9k9.svg#iconfont') format('svg');
-}
-@font-face {
-  font-family: 'iconfont';  /* project id 378106 */
-  src: url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.eot');
-  src: url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.woff') format('woff'),
-  url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_378106_mfutq5oj2ytrcnmi.svg#iconfont') format('svg');
-}
-.iconfont{
-  font-family: 'iconfont';
-  color:gray;
 }

@@ -1,9 +1,8 @@
 <template>
-    <transition name="slide-fade">
-      <div  v-if="currentIndex  === 1" class="meAddress">
-        <div style="text-align:center">
-          <i @click="toperson"><</i>
-          <span>收货地址</span>
+      <div class="meAddress">
+        <div style="text-align:center;background: #252525" >
+          <i style="padding: 0 10px" @click="$emit('returnPre')"><</i>
+          <span style="color:#ffffff">收货地址</span>
         </div>
 
         <p>
@@ -12,11 +11,11 @@
         </p>
         <p>
           <span>联系电话</span>
-          <input type="number" placeholder="请填写我们联系你的方式"></p>
+          <input type="number" placeholder="请填写我们联系你的方式">
+        </p>
         <p>
           <span>邮政编码</span>
-          <input type="number" placeholder="请填写你所在地区的邮政编码"></p>
-
+          <input type="number" placeholder="请填写你所在地区的邮政编码">
         </p>
         <p>
           <select name="">
@@ -41,37 +40,59 @@
         </p>
         <p>
           <span>详细地址</span>
-          <input type="text" placeholder="请填写你详细的街道，楼道，门牌号"></p>
-
+          <input type="text" placeholder="请填写你详细的街道，楼道，门牌号">
         </p>
-
-        <button class="mebtn" @click="AddressMask">确认修改</button>
-
-        <div class="mePerson-mask" v-show="maskshowAddress">
-          <div class="mask"></div>
-          <div class="mask-btn">
-            <p>地址资料完成</p>
-            <button @click="toperson">确定</button>
-          </div>
-        </div>
+        <button class="mebtn" @click="sure" >确认修改</button>
 
       </div>
-    </transition>
+
 </template>
 
 <script>
-
   export default {
-    name: 'address',
+    name: 'received',
     props: [],
     data () {
       return {
+        mePro:[
 
+          {mepro:"四川省"},
+          {mepro:"广州省"},
+          {mepro:"广西省"},
+          {mepro:"浙江省"},
+          {mepro:"湖南省"},
+          {mepro:"湖北省"},
+          {mepro:"河北省"},
+          {mepro:"河南省"},
+          {mepro:"...."}
+        ],
+
+        meCity:[
+
+          {mecity:"成都市"},
+          {mecity:"绵阳市"},
+          {mecity:"攀枝花市"},
+          {mecity:"泸州市"},
+          {mecity:"广元市"},
+          {mecity:"达州市"},
+          {mecity:"...."}
+        ],
+        meArea:[
+          {mearea:"武侯区"},
+          {mearea:"金牛区"},
+          {mearea:"高新区"},
+          {mearea:"锦江区"},
+          {mearea:"青羊区"},
+          {mearea:"双牛区"},
+          {mearea:"...."}
+        ]
 
       }
     },
     methods:{
-
+      sure() {
+          alert('修改成功')
+      }
     }
   }
 </script>
@@ -79,78 +100,67 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
   .meAddress{
-    width: 100%;
-    height: 500px;
-    background-color: tan;
-    position: absolute;
-    top: 220px;
-    left: 0;
-    text-align: center;
-  div{
-    width: 100%;
-    height: auto;
-    background-color: #000000;
-    color: white;
-    height: 50px;
-    line-height: 50px;
-  i{
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 2%;
-  }
-  span{
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-
-  }
-  }
-  p{
-    border-bottom: 1px solid gray;
-    padding: 5px;
-  }
-  button{
-    margin: 20px 0;
-    padding: 10px 40px;
-    background-color:  #00ff00;
-    outline: none;
-
-  }
-  .mask{
+    z-index: 999999999999;
     width: 100%;
     height: 100%;
+    background: #ffffff;
     position: fixed;
-    top: 0;
+    top:0;
     left: 0;
-    background-color: 	#D3D3D3;
-    opacity: .6;
-    z-index: 100;
-
-  }
-  .mask-btn{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: white;
-    z-index: 200;
-    color: black;
-    width: 400px;
-    height: 200px;
     text-align: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: space-around;
-    border-radius: 10px;
-  button{
-    padding: 10px 40px;
-    border-radius: 20px;
-    outline: none;
-  }
-
-  }
+    font-size: 20px;
+      div{
+        width: 100%;
+        height: auto;
+        background-color: #000000;
+        color: white;
+        height: 50px;
+        line-height: 50px;
+      }
+      i{
+        color: white;
+        position: absolute;
+        top: 0;
+        left: 2%;
+      }
+      p{
+        border-bottom: 1px solid gray;
+        padding: 0 10px;
+        height: 40px;
+        line-height: 40px;
+        text-align: left;
+      }
+        span{
+          display: inline-block;
+          width: 100px;
+          font-size: 18px;
+          color: #5e5e5e;
+        }
+      input{
+        display: inline-block;
+        outline-style: none;
+        border: 0;
+        font-size: 15px;
+        height: 30px;
+        margin: 0;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+      }
+        select{
+          font-size: 15px;
+          color: #5e5e5e;
+        }
+      button{
+        width: 80%;
+        height: 40px;
+        margin: 40px auto;
+        line-height: 40px;
+        background: #1da43e;
+        color: #ffffff;
+        border-style: none;
+        border-radius: 5px;
+        font-size: 20px;
+      }
   }
 </style>
